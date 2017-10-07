@@ -1,0 +1,4 @@
+  ## Use of "&" and "&&" operators in cpp 
+
+  a) "&" is the bitwise and operator.Bitwise operator works on bits and perform bit-by-bit operation.
+  b) "&&" is the logical and operator.If both the operands are non-zero, then condition becomes true.(Used in conditional statements)
