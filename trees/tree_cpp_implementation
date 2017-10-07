@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 using namespace std;
 
@@ -10,6 +8,7 @@ int data ;
 BstNode* right ; 
 BstNode* left ; 
 };
+
 
 
 // Code to generate a new BSTNode with given data and setting 
@@ -26,6 +25,7 @@ return newNode ;
 
 // Inserting a new node into the binary dearch tree with the given value and setting up the left and 
 // right child accordingly.
+
 BstNode* Insert(BstNode* root , int data){
 if(root==NULL) //empty tree
 root = GetnewNode(data) ; 
@@ -40,6 +40,20 @@ return root ;
 
 
 
+// Searching for a node with a given value in the given BST.
+// If the node with the given value is found , it returns true else returns false.
+
+bool Search(BstNode* root , int data){
+if(root == NULL) return false ; 
+else if (root->data == data)
+return true ; 
+else if (data<root->data)
+Search(root->left , data); 
+else 
+Search(root->right , data); 
+}
+
+
 
 int main() {
 	
@@ -49,6 +63,6 @@ root = Insert(root , 10) ;
 root = Insert(root , 15) ; 
 root = Insert(root , 12) ; 
 	
-	
-	
+cout<<Search(10)<<endl ; 
+cout<<Search(11)<<endl ; 
 }
