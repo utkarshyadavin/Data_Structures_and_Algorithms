@@ -1,0 +1,54 @@
+
+
+#include <iostream>
+using namespace std;
+
+
+//Structure of BSTNode with data and two pointer fields
+struct BstNode {
+int data ; 
+BstNode* right ; 
+BstNode* left ; 
+};
+
+
+// Code to generate a new BSTNode with given data and setting 
+//the left and the right pointers as null
+BstNode* GetnewNode(int data) {
+BstNode* newNode = new BstNode() ; 
+newNode->data = data ; 
+newNode->left = NULL ;
+newNode->right = NULL ; 
+return newNode ; 
+}
+
+
+
+// Inserting a new node into the binary dearch tree with the given value and setting up the left and 
+// right child accordingly.
+BstNode* Insert(BstNode* root , int data){
+if(root==NULL) //empty tree
+root = GetnewNode(data) ; 
+else if (data < root->data){
+root->left = Insert(root->left , data) ; 
+}
+else {
+root->right = Insert(root->right , data) ; 
+}
+return root ; 
+}
+
+
+
+
+int main() {
+	
+	
+BstNode* root  = NULL ; 
+root = Insert(root , 10) ; 
+root = Insert(root , 15) ; 
+root = Insert(root , 12) ; 
+	
+	
+	
+}
