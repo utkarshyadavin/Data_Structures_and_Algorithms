@@ -2,7 +2,9 @@
 using namespace std;
 
 
+
 //Structure of BSTNode with data and two pointer fields
+
 struct BstNode {
 int data ; 
 BstNode* right ; 
@@ -13,6 +15,7 @@ BstNode* left ;
 
 // Code to generate a new BSTNode with given data and setting 
 //the left and the right pointers as null
+
 BstNode* GetnewNode(int data) {
 BstNode* newNode = new BstNode() ; 
 newNode->data = data ; 
@@ -55,6 +58,7 @@ Search(root->right , data);
 
 
 //Finding the mminimum element in the BST
+
 int FindMin(BstNode* root ) {
 if(root==NULL){
 cout<<"There is no minimum element as the tree is empty"<<"\n"; 
@@ -70,6 +74,7 @@ return root->data ;
 
 
 //Finding the maximumum element in the BST
+
 int FindMax(BstNode* root ) {
 if(root==NULL)
 {cout<<"There is no minimum element as the tree is empty"<<"\n"; 
@@ -84,6 +89,35 @@ return root->data ;
 
 
 
+//Finding minimum using a recurssive call
+
+int FindMinRecur (BstNode* root){
+if(root==NULL)
+{
+cout<<"There is no minimum element as the tree is empty"<<"\n"; 
+return -1 ; 
+}
+else if(root->left==NULL)
+return root->data ; 
+else
+return FindMinRecur(root->left);
+}
+
+
+
+//Finding maximum using a recurssive call
+
+int FindMaxRecur (BstNode* root){
+if(root==NULL)
+{
+cout<<"There is no minimum element as the tree is empty"<<"\n"; 
+return -1 ; 
+}
+else if(root->right==NULL)
+return root->data ; 
+else
+return FindMaxRecur(root->right);
+}
 
 
 
@@ -99,8 +133,8 @@ root = Insert(root , 12) ;
 cout<<Search(root ,10)<<endl ; 
 cout<<Search(root ,11)<<endl ; 
 
-cout<<FindMax(root)<<"\n" ; 
-cout<<FindMin(root)<<"\n" ; 
+cout<<FindMaxRecur(root)<<"\n" ; 
+cout<<FindMinRecur(root)<<"\n" ; 
 
 	
 }
