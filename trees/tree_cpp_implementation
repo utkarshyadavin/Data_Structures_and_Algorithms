@@ -54,6 +54,39 @@ Search(root->right , data);
 }
 
 
+//Finding the mminimum element in the BST
+int FindMin(BstNode* root ) {
+if(root==NULL){
+cout<<"There is no minimum element as the tree is empty"<<"\n"; 
+return -1 ; 
+}
+while(root->left!=NULL)
+{
+root = root->left ;
+}
+return root->data ; 
+}
+
+
+
+//Finding the maximumum element in the BST
+int FindMax(BstNode* root ) {
+if(root==NULL)
+{cout<<"There is no minimum element as the tree is empty"<<"\n"; 
+return -1 ; 
+}
+while(root->right!=NULL)
+{
+root = root->right ;
+}
+return root->data ; 
+}
+
+
+
+
+
+
 
 int main() {
 	
@@ -65,4 +98,9 @@ root = Insert(root , 12) ;
 	
 cout<<Search(root ,10)<<endl ; 
 cout<<Search(root ,11)<<endl ; 
+
+cout<<FindMax(root)<<"\n" ; 
+cout<<FindMin(root)<<"\n" ; 
+
+	
 }
