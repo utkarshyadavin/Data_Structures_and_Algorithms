@@ -1,0 +1,47 @@
+
+Web Link: http://www.geeksforgeeks.org/set-in-cpp-stl/
+
+
+1) Set is associative container where each element has to be unique beacuse the value of the element identifies it.
+2) Value of set cannot once added cannot be changed.
+3) Possible to remove and add the modified value
+
+
+Functions:
+
+begin() – Returns an iterator to the first element in the set
+size() – Returns the number of elements in the set
+empty() – Returns whether the set is empty
+
+
+#include <iostream>
+#include <set>
+#include <iterator>
+ 
+using namespace std;
+ 
+int main()
+{
+    // empty set container
+    set <int, greater <int> > gquiz1;        
+ 
+    // insert elements in random order
+    gquiz1.insert(40);
+    gquiz1.insert(30);
+    gquiz1.insert(60);
+    gquiz1.insert(20);
+    gquiz1.insert(50);
+    gquiz1.insert(50); // only one 50 will be added to the set
+    gquiz1.insert(10);
+
+
+set <int, greater <int> > :: iterator itr;
+    cout << "\nThe set gquiz1 is : ";
+    for (itr = gquiz1.begin(); itr != gquiz1.end(); ++itr)
+    {
+        cout << '\t' << *itr;
+    }
+    cout << endl;
+
+
+
