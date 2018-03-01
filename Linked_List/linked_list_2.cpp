@@ -106,15 +106,7 @@ void insertAtnthPosition( int value , int n){
 		}
 		
 	}
-	else if (n==length){
-		
-	while(iterator->next!=NULL){
-		iterator = iterator->next;
-	}
-	iterator->next = temp ; 
-		
-		
-	}
+	
 	else {
 	
 	for (int i = 0 ; i<n-1 ; i++){
@@ -129,25 +121,48 @@ void insertAtnthPosition( int value , int n){
 
 
 }
+
+// Deleting an element at the nth position in a linked list
+
+void deleteNode(int n ){
+	Node* iterator = head ; 
 	
-
-
+	if(n > numberOfElements()){
+		cout<<"The element can't be deleted. Please enter a valid value of n.\n" ; 
+		
+	}
+	else {
+	if(n==1){
+		head = iterator->next ; 
+		free(iterator); 
+	}
+	else {
+	for(int i = 1 ; i<n-1 ; i++){
+		iterator = iterator->next ; 
+	}
+	Node* temp1 = iterator->next ; 
+	iterator->next = temp1->next ; 
+	free(temp1);
+	}
+	}
+}
 int main() {
 	// your code goes here
-	
-	
 	insertNode(5) ; 
 	insertNode(10) ;
 	insertNode(15) ;
 	insertNode(20) ; 
 	insertNode(41) ; 
 	insertNode(51) ; 
-	insertAtnthPosition(13 , 0) ;
-	insertAtnthPosition(17 , 0) ;
-	insertAtnthPosition(58 , 8) ;
+	insertAtnthPosition(58 , 0) ;
+	insertAtnthPosition(82 , 7) ;
+	insertAtnthPosition(81 , 7) ;
+	deleteNode(9) ; 
+	deleteNode(8) ; 
+	deleteNode(1) ;
+	deleteNode(1) ; 
+	deleteNode(1) ; 
 
 	print() ; 
 	cout<<"Length of Linked List: "<<numberOfElements()<<"\n"; 
-		
-	
 }
