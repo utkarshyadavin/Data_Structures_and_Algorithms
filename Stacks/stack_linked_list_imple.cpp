@@ -52,10 +52,20 @@ return popped ;
 }
 }
 
+
+//method to get the top element of the stack
 int top(stackNode* root){
-	
-	
+if(isEmpty(root)){
+cout<<"The stack is empty"<<" \n" ; 
+return -1 ; 
 }
+else
+return root->data ; 
+}
+
+
+
+//method to print all the elements in the stack.
 void printStack(stackNode* root){
 if(root ==NULL)
 cout<<"The stack is empty"<<" \n" ; 
